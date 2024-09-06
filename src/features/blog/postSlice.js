@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-
-export const ROOT_URL = import.meta.env.VITE_API_BASE_URL;
+import { getUrl } from "../../utils";
 
 const initialState = {
   isSuccessful: false,
@@ -19,7 +18,7 @@ export const sendPost = createAsyncThunk(
     const access = thunkAPI.getState().login.accessToken;
     try {
       const response = await axios.post(
-        `${ROOT_URL}/api/post/create/`,
+        `${getUrl()}/api/post/create/`,
         postObj,
         {
           headers: {
@@ -40,7 +39,7 @@ export const retrievePost = createAsyncThunk(
   "post/retrievePost",
   async (postSlug, thunkAPI) => {
     try {
-      const response = await axios(`${ROOT_URL}/api/post/${postSlug}/`);
+      const response = await axios(`${getUrl()}/api/post/${postSlug}/`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response?.data);
@@ -52,7 +51,7 @@ export const getAllPosts = createAsyncThunk(
   "post/getAllPosts",
   async (_, thunkAPI) => {
     try {
-      const response = await axios(`${ROOT_URL}/api/posts/`);
+      const response = await axios(`${getUrl()}/api/posts/`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);
@@ -64,10 +63,10 @@ export const getPopularPost = createAsyncThunk(
   "post/getPopularPosts",
   async (_, thunkAPI) => {
     try {
-      const resp = await axios(`${ROOT_URL}/api/popular/posts/`);
+      const resp = await axios(`${getUrl()}/api/popular/posts/`);
       return resp.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response?.dat);
+      return thunkAPI.rejectWithValue(error.response?.data);
     }
   }
 );
@@ -79,7 +78,7 @@ export const updatePost = createAsyncThunk(
     const access = thunkAPI.getState().login.accessToken;
     try {
       const response = await axios.patch(
-        `${ROOT_URL}/api/post/${postSlug}/`,
+        `${getUrl()}/api/post/${postSlug}/`,
         updatePostObj,
         {
           headers: {
@@ -101,7 +100,7 @@ export const deletePost = createAsyncThunk(
   async (postSlug, thunkAPI) => {
     const access = thunkAPI.getState().login.accessToken;
     try {
-      const response = await axios.delete(`${ROOT_URL}/api/post/${postSlug}/`, {
+      const response = await axios.delete(`${getUrl()}/api/post/${postSlug}/`, {
         headers: {
           Authorization: `Bearer ${access}`,
         },

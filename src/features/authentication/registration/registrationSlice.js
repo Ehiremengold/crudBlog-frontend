@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { getUrl } from "../../../utils";
 
 const initialState = {
   username: "",
@@ -9,13 +10,13 @@ const initialState = {
   isError: false,
 };
 
-const url = "";
+//
 
 export const register = createAsyncThunk(
   "auth/register",
   async (signUpData, thunkAPI) => {
     try {
-      const resp = await axios.post(url, JSON.stringify(signUpData));
+      const resp = await axios.post(`${getUrl()}/api/create-account/`, JSON.stringify(signUpData));
       console.log(resp.data);
       return resp.data;
     } catch (error) {
@@ -29,9 +30,6 @@ const registerSlice = createSlice({
   name: "register",
   initialState,
   reducers: {
-    // logout: (state) => {
-    //   return state;
-    // },
   },
   extraReducers: (builder) => {
     builder

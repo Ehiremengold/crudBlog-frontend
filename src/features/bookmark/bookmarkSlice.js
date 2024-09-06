@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { url } from "../../utils";
+import { getUrl } from "../../utils";
 
 const initialState = {
   bookmarks: [],
@@ -13,7 +13,7 @@ export const bookmarkPost = createAsyncThunk(
   async ({ slug, isBookmarked }, thunkAPI) => {
     const access = thunkAPI.getState().login.accessToken;
     try {
-      const resp = await axios.post(`${url}bookmark/post/${slug}/`, null, {
+      const resp = await axios.post(`${getUrl()}bookmark/post/${slug}/`, null, {
         headers: {
           Authorization: `Bearer ${access}`,
         },

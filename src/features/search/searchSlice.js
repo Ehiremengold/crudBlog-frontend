@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { getUrl } from "../../utils";
 
-const ROOT_API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const initialState = {
   isLoading: false,
@@ -14,7 +14,7 @@ export const getSearchedPosts = createAsyncThunk(
   "search/getPosts",
   async (query, thunkAPI) => {
     try {
-      const resp = await axios(`${ROOT_API_URL}/api/posts/search/?q=${query}`);
+      const resp = await axios(`${getUrl()}/api/posts/search/?q=${query}`);
       return resp.data;
     } catch (error) {
       console.log(error);

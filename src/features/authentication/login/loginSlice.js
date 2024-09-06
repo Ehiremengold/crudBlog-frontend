@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { getUrl } from "../../../utils";
 
 const initialState = {
   isAuthenticated: false,
@@ -12,7 +13,7 @@ const initialState = {
   errorMsg: "",
 };
 
-const url = `${import.meta.env.VITE_API_BASE_URL}/api/token/`;
+const url = `${getUrl()}/api/token/`;
 
 export const login = createAsyncThunk(
   "auth/login",

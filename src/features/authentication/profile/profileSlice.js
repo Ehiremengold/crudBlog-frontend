@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { getUrl } from "../../../utils";
 
 const initialState = {
   isLoading: false,
@@ -12,7 +13,7 @@ const initialState = {
 export const getUserProfile = createAsyncThunk(
   "profile/getProfileUser",
   async (username, thunkAPI) => {
-    const url = `${import.meta.env.VITE_API_BASE_URL}/${username}/`;
+    const url = `${getUrl()}/api/${username}/`;
     try {
       const response = await axios(url);
       return response.data;

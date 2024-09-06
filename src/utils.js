@@ -6,4 +6,9 @@ export const truncateTitle = (string, count = 60) => {
   return string;
 };
 
-export const url = `${import.meta.env.VITE_API_BASE_URL}/api/`;
+// Production or Not
+const prod = false;
+
+export const getUrl = () => {
+  return prod ? `${import.meta.env.VITE_PROD_API_BASE_URL}` : `${import.meta.env.VITE_DEV_API_BASE_URL}`;
+};
