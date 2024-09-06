@@ -64,6 +64,7 @@ export const getPopularPost = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const resp = await axios(`${getUrl()}/api/popular/posts/`);
+      console.log(`${getUrl()}/api/popular/posts/`);
       return resp.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response?.data);
