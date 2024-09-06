@@ -1,0 +1,67 @@
+/* index.css */
+
+:root {
+  /* wghts 300, 400, 500, 500 */
+  --font-family: "Poppins", sans-serif;
+  --background-color: #fff;
+  --font-color: #000;
+  --medium-gray: #979595;
+  --h1-font-size: clamp(21px, 3vw, 50px);
+  --h2-font-size: clamp(18px, 2.5vw, 35px);
+  --h3-font-size: clamp(16px, 1vw, 25px);
+  --h4-font-size: clamp(13px, .8vw, 17px);
+  --body-font-size: clamp(14px, 16px, 20px);
+}
+
+.dark-theme {
+  --font-color: #fff;
+  --background-color: #000;
+}
+body {
+  font-family: var(--font-family);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 2100px;
+  width: 100%;
+  margin-inline: auto;
+  position: relative;
+  /* border: 1px solid salmon; */
+}
+
+
+
+main {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  height: 100%;
+}
+
+input,
+button {
+  font-family: "Poppins";
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: .6rem 1rem;
+}
+
+button{
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+

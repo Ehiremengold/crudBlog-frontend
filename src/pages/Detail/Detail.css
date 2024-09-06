@@ -1,0 +1,175 @@
+.detail {
+  position: relative;
+  height: 350px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.detail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6)
+  );
+  z-index: 1;
+}
+
+.post-detail__header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 80%;
+  margin-inline: auto;
+}
+
+.post-detail__desc {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 385px) {
+  .post-detail__desc{
+    flex-direction: column;
+  }
+
+  .post-detail__desc div{
+    display: none;
+  }
+}
+
+.post-detail__header h1 {
+  font-size: var(--h1-font-size);
+}
+
+.post-detail__desc p {
+  font-size: var(--body-font-size);
+}
+
+.post-body {
+  margin: 4rem 0;
+}
+
+.post-body__wrapper {
+  width: 90%;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  /* flex: 1 1 0; */
+}
+
+@media (max-width: 698px) {
+  .post-body__wrapper {
+    flex-direction: column;
+  }
+}
+
+.post-body__wrapper .right__main-body {
+  flex: 1;
+}
+.post-body__wrapper .left__main-body {
+  text-align: justify;
+  flex: 2;
+}
+@media (min-width: 768px) {
+  .post-body__wrapper {
+    width: 85%;
+  }
+}
+
+.body-img {
+  width: 200px;
+}
+.right__main-body h1 {
+  margin-bottom: 1rem;
+}
+
+.related-post {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.related-posts {
+  margin: 1rem 0;
+}
+
+.related-post-img {
+  height: 60px;
+  width: 120px;
+  border-radius: 8px;
+  background-color: rgb(235, 232, 232);
+}
+
+.related_post__desc:hover h3 {
+  text-decoration: underline;
+}
+
+.category-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+}
+.left__main-body img {
+  width: 50%;
+}
+
+.delete-btn {
+  background-color: red;
+  margin-left: 1rem;
+}
+
+.update-btn {
+  background-color: peru;
+}
+.cancel-btn,
+.update-btn,
+.delete-btn {
+  color: #fff;
+  border-radius: 5px;
+}
+
+.modal {
+  z-index: 100;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  place-content: center;
+}
+
+.delete-confirmation {
+  background-color: white;
+  width: 90%;
+  margin-inline: auto;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.action-confirm-btns {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-confirm-btns .cancel-btn {
+  background-color: black;
+}

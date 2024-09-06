@@ -1,0 +1,32 @@
+.profile-posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.profile-posts .post-card__img img{
+  width: 100%;
+} 
+
+.post-details button {
+  padding: 0 1rem;
+  border-radius: 5px;
+}
+
+.post-card__description h3 {
+  font-size: var(--h3-font-size);
+}
+
+.post-card__description p {
+  font-size: var(--body-font-size);
+  color: var(--medium-gray);
+}
+
+.post-card__description .post-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+

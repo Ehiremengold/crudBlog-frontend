@@ -1,0 +1,29 @@
+.all-posts {
+  padding: 4rem 0;
+  background-color: var(--background-color);
+}
+
+.all-posts-wrapper {
+  width: 80%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.error-fetch{
+  display: block;
+}
+
+.reload-btn{
+  margin-top: 2rem;
+  background-color: rgb(60, 60, 250);
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+.reload-btn img{
+  margin-left: 1rem;
+  width: 25%;
+}
