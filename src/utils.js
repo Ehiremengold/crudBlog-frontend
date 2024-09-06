@@ -7,7 +7,8 @@ export const truncateTitle = (string, count = 60) => {
 };
 
 // Production or Not
-const environment = import.meta.env.ENVIRONMENT;
+const environment = "prod";
+
 
 export const getUrl = () => {
   return environment === "prod"
