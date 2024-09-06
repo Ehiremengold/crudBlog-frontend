@@ -7,8 +7,10 @@ export const truncateTitle = (string, count = 60) => {
 };
 
 // Production or Not
-const prod = false;
+const environment = import.meta.env.ENVIRONMENT;
 
 export const getUrl = () => {
-  return prod ? `${import.meta.env.VITE_PROD_API_BASE_URL}` : `${import.meta.env.VITE_DEV_API_BASE_URL}`;
+  return environment === "prod"
+    ? `${import.meta.env.VITE_PROD_API_BASE_URL}`
+    : `${import.meta.env.VITE_DEV_API_BASE_URL}`;
 };
